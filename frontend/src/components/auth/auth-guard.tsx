@@ -1,9 +1,11 @@
 "use client";
 
 import { useEffect } from "react";
+import { useRouter as useNextRouter } from "next/navigation";
 import { useAuth } from "@/context/auth-context";
 import { useTranslations } from "next-intl";
-import { useRouter, usePathname } from "@/i18n/navigation";
+import { usePathname } from "@/i18n/navigation";
+import { useLocale } from "next-intl";
 
 type AuthGuardProps = {
   requireAdmin?: boolean;
@@ -17,18 +19,18 @@ export const AuthGuard = ({
   children,
 }: AuthGuardProps) => {
   const { user, status } = useAuth();
-  const router = useRouter();
+  const router = useNextRouter();
+  const locale = useLocale();
   const t = useTranslations("auth");
 
   const pathname = usePathname();
   
   useEffect(() => {
     if (status === "idle" && !user) {
-      // Use next-intl router which handles locale automatically
       const nextPath = pathname || "/";
-      router.push(`/auth/login?next=${encodeURIComponent(nextPath)}`);
+      router.push(`/${locale}/auth/login?next=${encodeURIComponent(nextPath)}`);
     }
-  }, [status, user, router, pathname]);
+  }, [status, user, router, pathname, locale]);
 
   if (status === "loading") {
     return (
