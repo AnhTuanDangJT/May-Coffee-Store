@@ -1,8 +1,8 @@
-import { Schema, model, type Document } from "mongoose";
+import { Schema, model, type Document, type Types } from "mongoose";
 
 export interface AdminInvitationDocument extends Document {
   email: string;
-  invitedBy: string; // Admin user ID
+  invitedBy: Types.ObjectId; // Admin user ID
   createdAt: Date;
 }
 

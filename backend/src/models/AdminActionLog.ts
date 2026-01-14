@@ -2,10 +2,14 @@ import { Schema, model, type Document, type Types } from "mongoose";
 
 export type AdminActionType =
   | "add_admin"
+  | "invite_admin"
+  | "revoke_admin"
   | "delete_user"
   | "feedback_approve"
   | "feedback_reject"
-  | "event_create";
+  | "event_create"
+  | "event_update"
+  | "event_delete";
 
 export interface AdminActionLogDocument extends Document {
   admin: Types.ObjectId;

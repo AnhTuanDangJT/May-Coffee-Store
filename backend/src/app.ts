@@ -126,7 +126,8 @@ if (env.nodeEnv === "development") {
         const cookies = Array.isArray(setCookieHeader) ? setCookieHeader : [setCookieHeader];
         console.log(`[Response] Set-Cookie header for ${req.method} ${req.path}:`, cookies);
         cookies.forEach((cookie, idx) => {
-          if (cookie.includes("maycoffee_session")) {
+          const cookieStr = String(cookie);
+          if (cookieStr.includes("maycoffee_session")) {
             console.log(`[Response] ✓ maycoffee_session cookie found in Set-Cookie header #${idx + 1}`);
           }
         });

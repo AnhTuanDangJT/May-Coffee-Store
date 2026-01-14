@@ -20,7 +20,6 @@ export const updateFeedbackApproval = catchAsync(
     const feedback = await feedbackService.setApproval(
       id,
       approved,
-      req.user!._id.toString(),
     );
     res.json({ data: feedback });
   },
