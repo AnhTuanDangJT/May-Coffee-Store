@@ -23,3 +23,4 @@ export const getMenuQr = catchAsync(async (_req: Request, res: Response) => {
 
 
 
+

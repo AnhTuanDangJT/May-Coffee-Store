@@ -32,7 +32,7 @@ export const VerifyForm = ({ locale, initialEmail }: VerifyFormProps) => {
   const tErrors = useTranslations("auth.errors");
   const router = useRouter();
   const searchParams = useSearchParams();
-  const { setUser } = useAuth();
+  const { setUser, refresh } = useAuth();
   const [status, setStatus] = useState<{
     type: "success" | "error";
     message: string;
@@ -58,11 +58,13 @@ export const VerifyForm = ({ locale, initialEmail }: VerifyFormProps) => {
   const onSubmit = async (data: FormValues) => {
     setStatus(null);
     try {
-      const response = await apiFetch<{ data: User }>("/auth/verify-email", {
+      const response = await apiFetch<{ data: User }>("/api/auth/verify-email", {
         method: "POST",
         body: JSON.stringify(data),
       });
       setUser(response.data);
+      // Refresh auth state to verify cookie is working
+      await refresh();
       setStatus({ type: "success", message: t("success") });
       setTimeout(() => {
         // Use next-intl router which handles locale automatically

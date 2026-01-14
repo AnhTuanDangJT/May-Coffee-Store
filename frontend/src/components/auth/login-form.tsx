@@ -32,7 +32,7 @@ export const LoginForm = ({ locale }: LoginFormProps): React.JSX.Element => {
   const router = useNextRouter();
   const currentLocale = useLocale();
   const searchParams = useSearchParams();
-  const { setUser } = useAuth();
+  const { setUser, refresh } = useAuth();
   const [status, setStatus] = useState<{
     type: "success" | "error";
     message: string;
@@ -54,6 +54,8 @@ export const LoginForm = ({ locale }: LoginFormProps): React.JSX.Element => {
         body: JSON.stringify(data),
       });
       setUser(response.data);
+      // Refresh auth state to verify cookie is working
+      await refresh();
       if (!response.data.isEmailVerified) {
         setStatus({ type: "error", message: t("unverified") });
         // Use next/navigation router with locale prefix for query params
