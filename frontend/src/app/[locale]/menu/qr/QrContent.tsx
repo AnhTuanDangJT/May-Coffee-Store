@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import { Download, Link2 } from "lucide-react";
-import { BACKEND_BASE_URL, QR_MENU_URL } from "@/lib/config";
+import { BACKEND_BASE_URL } from "@/lib/config";
 import QRCode from "qrcode";
 
 type QrContentProps = {
@@ -55,7 +55,11 @@ export const QrContent = ({
   const [isDownloading, setIsDownloading] = useState(false);
   const [downloadErrorMessage, setDownloadErrorMessage] = useState<string | null>(null);
 
-  const qrPageUrl = QR_MENU_URL || (typeof window !== "undefined" ? window.location.origin + "/menu" : "");
+  const QR_MENU_URL =
+    process.env.NEXT_PUBLIC_QR_MENU_URL ??
+    (typeof window !== "undefined" ? `${window.location.origin}/menu/qr` : "");
+  
+  const qrPageUrl = QR_MENU_URL;
   const qrImageUrl = `${BACKEND_BASE_URL}/qr/menu`;
 
   const [clientQrSrc, setClientQrSrc] = useState<string | null>(null);
