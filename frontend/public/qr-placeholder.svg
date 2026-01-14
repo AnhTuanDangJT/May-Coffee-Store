@@ -1,0 +1,21 @@
+<svg width="320" height="320" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+  <rect width="320" height="320" rx="32" fill="#1c0d08"/>
+  <rect x="32" y="32" width="256" height="256" fill="none" stroke="#f7c27c" stroke-width="8" stroke-dasharray="20 20"/>
+  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="48" fill="#f7c27c">QR</text>
+  <text x="50%" y="62%" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#f7c27c99">May Coffee</text>
+</svg>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,78 @@
+═══════════════════════════════════════════════════════
+  QUICK TEST - iPhone Connection
+═══════════════════════════════════════════════════════
+
+STEP 1: Verify Servers Running
+───────────────────────────────────────────────────────
+In terminal, you should see:
+  [0] ✓ Ready on http://0.0.0.0:3000
+  [1] Server running on port 4000
+
+If NOT seeing "Network: http://0.0.0.0:3000":
+  → Stop server (Ctrl+C)
+  → Run: npm run dev:network
+
+───────────────────────────────────────────────────────
+
+STEP 2: Test from Computer First
+───────────────────────────────────────────────────────
+1. Open browser on YOUR COMPUTER
+2. Go to: http://192.168.0.13:3000
+3. Does it work?
+   ✅ YES → Continue to iPhone
+   ❌ NO  → Servers not running correctly
+
+───────────────────────────────────────────────────────
+
+STEP 3: Test on iPhone
+───────────────────────────────────────────────────────
+1. Open Safari on iPhone
+2. Tap address bar
+3. Type EXACTLY: http://192.168.0.13:3000
+4. Tap "Go"
+
+⚠️  IMPORTANT:
+   • Use http:// (NOT https://)
+   • Include the port :3000
+   • No spaces before/after
+
+───────────────────────────────────────────────────────
+
+STEP 4: Common Mistakes
+───────────────────────────────────────────────────────
+❌ https://192.168.0.13:3000  (wrong - use http)
+❌ 192.168.0.13:3000          (missing http://)
+❌ 192.168.0.13               (missing port)
+✅ http://192.168.0.13:3000   (correct!)
+
+───────────────────────────────────────────────────────
+
+STEP 5: If Still Not Working
+───────────────────────────────────────────────────────
+1. Check Firewall:
+   Windows Security → Firewall → Allow Node.js
+
+2. Check Same Wi-Fi:
+   iPhone Wi-Fi network = Computer Wi-Fi network
+
+3. Try Chrome on iPhone:
+   Sometimes Safari blocks local IPs
+
+4. Verify IP Address:
+   Run: ipconfig | findstr IPv4
+   Make sure IP matches 192.168.0.13
+
+═══════════════════════════════════════════════════════
+
+
+
+
+
+
+
+
+
+
+
+
+

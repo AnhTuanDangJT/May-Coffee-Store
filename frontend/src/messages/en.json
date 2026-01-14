@@ -1,0 +1,264 @@
+{
+  "common": {
+    "cta": {
+      "viewMenu": "View menu",
+      "qrEnglish": "English-first menu",
+      "login": "Log in",
+      "signup": "Create account",
+      "logout": "Log out"
+    }
+  },
+  "auth": {
+    "loading": "Loading your session...",
+    "noPermission": "You don't have permission to view this section.",
+    "register": {
+      "title": "Create account",
+      "subtitle": "Save favorites, send feedback, and get exclusive event drops.",
+      "nameLabel": "Full name",
+      "emailLabel": "Email",
+      "passwordLabel": "Password",
+      "submit": "Sign up",
+      "haveAccount": "Already have an account? Sign in",
+      "success": "Registration complete. Check your inbox for the verification code.",
+      "devCodeHint": "Dev hint: verification code = {code}."
+    },
+    "login": {
+      "title": "Welcome back",
+      "subtitle": "Sign in to drop feedback and access the admin dashboard.",
+      "emailLabel": "Email",
+      "passwordLabel": "Password",
+      "submit": "Sign in",
+      "noAccount": "Don't have an account? Create one",
+      "unverified": "Email not verified yet. Please enter the code we sent."
+    },
+    "verify": {
+      "title": "Verify email",
+      "subtitle": "Type the 6-digit code we just sent. Email:",
+      "codeLabel": "Verification code",
+      "submit": "Verify",
+      "success": "Email verified! You're ready to enjoy May Coffee perks.",
+      "resendCode": "Resend code",
+      "resending": "Sending...",
+      "resendSuccess": "Verification code has been resent to your email"
+    },
+    "errors": {
+      "generic": "Something went wrong. Please try again.",
+      "emailRequired": "Email is required",
+      "networkError": "Unable to connect to the server. Please try again later."
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "menu": "Menu",
+    "events": "Events",
+    "feedback": "Feedback",
+    "admin": "Admin"
+  },
+  "hero": {
+    "badge": "May Coffee R&B",
+    "title": "A music-infused coffee sanctuary in the heart of Saigon",
+    "subtitle": "We craft soulful drinks and pair them with lush R&B beats so you can stay in flow, whether you are working, sketching, or unwinding.",
+    "rotatingLines": [
+      "A music-infused coffee sanctuary in the heart of Saigon",
+      "Where emotions slow down with every cup",
+      "A tiny corner to pause amid the city's rush",
+      "Coffee, sound, and the most soothing quiet moments"
+    ],
+    "featureSummary": "Scan the bilingual QR menu, subscribe to email alerts, and drop feedback in seconds—every core feature is built into May Coffee.",
+    "primaryCta": "Discover the menu",
+    "secondaryCta": "Open English-first menu",
+    "ratingHighlight": "average rating from regulars",
+    "menuHighlight": "hand-cut recipes",
+    "vibeHighlight": "true-to-vibe R&B mood",
+    "serviceHighlight": "service-ready crew"
+  },
+  "menu": {
+    "titleShort": "May Coffee Signatures",
+    "descriptionShort": "Inspired by Vietnamese beans, tropical fruits, and timeless R&B grooves.",
+    "sectionHighlight": "Curated menu",
+    "badgeBest": "Best Seller",
+    "badgeNew": "Fresh Drop",
+    "pageTitle": "May Coffee Menu",
+    "pageSubtitle": "Refreshing, light drinks, perfect for those chill moments at May Coffee.",
+    "searchPlaceholder": "Search by drink name or the mood you crave...",
+    "categoryAll": "All",
+    "emptyState": "No drinks matched your filters. Try another keyword.",
+    "qrSection": {
+      "badge": "QR menu",
+      "title": "Scan to view English-first menu",
+      "subtitle": "International guests can scan and instantly read everything in English while keeping the option to switch back to Vietnamese.",
+      "cta": "Open QR page",
+      "download": "Download QR PNG",
+      "copyLink": "Copy menu link",
+      "copySuccess": "Link copied"
+    }
+  },
+  "experience": {
+    "badge": "R&B Experience",
+    "title": "Designed for every breath",
+    "subtitle": "Soft acoustics, amber light, caramel roast aroma, and sincere service.",
+    "craft": {
+      "title": "Craft beverages",
+      "description": "18-hour cold brew, house-made syrups, toppings refreshed daily."
+    },
+    "music": {
+      "title": "R&B playlist",
+      "description": "Curated by our resident DJ—groovy enough for focus or pure chill."
+    },
+    "ambience": {
+      "title": "Mood architecture",
+      "description": "Mocha, copper, and deep violet palette with cedarwood candle scent."
+    }
+  },
+  "events": {
+    "badge": "May Happenings",
+    "title": "Events & alerts",
+    "subtitle": "Cold brew workshops, acoustic nights, and seasonal tasting flights.",
+    "highlights": [
+      "Instant bilingual email alerts whenever new slots or changes go live",
+      "Reminder emails include QR tickets, map links, and optional dress code",
+      "Admin keeps a clean guest list per session to avoid duplicate sign-ups"
+    ],
+    "cta": "Get notified",
+    "viewDetails": "View details",
+    "loading": "Loading events...",
+    "empty": "No upcoming events at the moment.",
+    "emptySubtitle": "Check back soon for updates!",
+    "eventLocation": "In-store event",
+    "nextEvent": {
+      "label": "Coming soon",
+      "title": "Event schedule in progress",
+      "description": "We'll announce holiday pop-ups, special promos, or workshops as soon as they're confirmed.",
+      "schedule": "Follow our socials or join the mailing list for first alerts."
+    }
+  },
+  "feedback": {
+    "badge": "Community",
+    "title": "Feedback about us",
+    "subtitle": "",
+    "ctaDescription": "Want to be featured here? Sign in and drop your thoughts—once the team approves it, your message appears on this wall.",
+    "ctaButton": "Share feedback"
+  },
+  "feedbackPage": {
+    "title": "Feedback lounge",
+    "subtitle": "Every comment is reviewed by admins to keep the R&B energy cozy.",
+    "ratingTitle": "Average rating",
+    "ratingSubtitle": "Based on approved feedback only.",
+    "form": {
+      "title": "Share your experience",
+      "description": "Tell us what moved you at May Coffee.",
+      "ratingLabel": "Your rating",
+      "commentLabel": "Your thoughts",
+      "placeholder": "Example: Cascara Sunset with tonight's playlist was unreal...",
+      "submit": "Send feedback",
+      "submitButton": "Share your heart ☕",
+      "loginRequired": "Please sign in to share your thoughts.",
+      "loginRequiredError": "Please sign in to share your feedback.",
+      "success": "Thanks! Admin will approve it shortly.",
+      "successTitle": "Thank you!",
+      "successMessage": "Your feedback has been received. ✨",
+      "limit": "You've reached the 3 feedback limit for today.",
+      "networkError": "Unable to connect to the server. Please try again later."
+    },
+    "list": {
+      "title": "Feedback",
+      "empty": "No approved feedback yet.",
+      "note": ""
+    }
+  },
+  "admin": {
+    "nav": {
+      "overview": "Overview",
+      "feedback": "Feedback",
+      "users": "Users",
+      "events": "Events"
+    },
+    "overview": {
+      "title": "May Coffee radar",
+      "pendingTitle": "Pending feedback",
+      "empty": "No feedback waiting for moderation.",
+      "cta": "View all"
+    },
+    "feedback": {
+      "title": "Feedback moderation",
+      "pending": "Pending",
+      "approved": "Approved",
+      "approve": "Approve",
+      "hide": "Hide",
+      "delete": "Delete",
+      "deleteConfirm": "Are you sure you want to delete this approved feedback? This action cannot be undone.",
+      "deleteError": "Failed to delete feedback. Please try again.",
+      "status": "Status"
+    },
+    "users": {
+      "title": "User directory",
+      "addAdminTitle": "Promote to admin",
+      "addAdminPlaceholder": "User email to promote",
+      "addAdminButton": "Add admin",
+      "historyButton": "Feedback history",
+      "deleteButton": "Delete user",
+      "promoteButton": "Make admin",
+      "grantAdminButton": "Grant Admin",
+      "revokeAdminButton": "Revoke Admin",
+      "revokeConfirm": "Are you sure you want to revoke admin privileges from this user?",
+      "roleAdmin": "Admin",
+      "roleUser": "User",
+      "verified": "Verified",
+      "notVerified": "Unverified",
+      "historyEmpty": "No feedback yet.",
+      "reasonPrompt": "Enter a reason to delete this user",
+      "reasonPlaceholder": "Example: Repeated spam feedback"
+    },
+    "events": {
+      "title": "Event Management",
+      "createEvent": "Create Event",
+      "editEvent": "Edit Event",
+      "titlePlaceholder": "Event title",
+      "descriptionPlaceholder": "Event description",
+      "locationPlaceholder": "Location (optional)",
+      "publishLabel": "Publish immediately",
+      "createButton": "Create Event",
+      "updateButton": "Update Event",
+      "cancelButton": "Cancel",
+      "editButton": "Edit",
+      "publishButton": "Publish",
+      "unpublishButton": "Unpublish",
+      "deleteButton": "Delete",
+      "deleteConfirm": "Are you sure you want to delete this event?",
+      "published": "Published",
+      "draft": "Draft"
+    },
+    "messages": {
+      "success": "Done",
+      "error": "Something went wrong."
+    }
+  },
+  "footer": {
+    "openHours": "Open daily 6:30 AM - 10:30 PM",
+    "contact": "Contact",
+    "social": "Connect",
+    "credit": "© 2026 May Coffee. Crafted with love & an R&B groove."
+  },
+  "qrPage": {
+    "badge": "English-first QR",
+    "title": "Scan & sip",
+    "subtitle": "Open the camera, scan the code, and land on the English-first menu instantly. You can switch to Vietnamese without breaking the layout.",
+    "steps": [
+      "Scan QR to open maycoffee.store/menu/qr",
+      "Toggle your preferred language",
+      "Save the QR for friends"
+    ],
+    "note": "Scan the QR to open both Vietnamese and English menus.",
+    "primaryCta": "Open English menu",
+    "secondaryCta": "View Vietnamese menu",
+    "download": "Download QR",
+    "copyLink": "Copy link",
+    "copySuccess": "Link copied",
+    "loadingLabel": "Loading QR...",
+    "errorTitle": "QR is not available",
+    "errorDescription": "QR is temporarily unavailable. Tap retry to request a fresh code.",
+    "retryCta": "Retry",
+    "downloadError": "Unable to download the QR. Please try again."
+  }
+}
+

@@ -1,0 +1,37 @@
+# Node / general
+node_modules
+.DS_Store
+*.log
+dist
+
+# Env files
+.env
+frontend/.env
+backend/.env
+
+# Build outputs
+frontend/.next
+frontend/out
+backend/dist
+
+# IDE
+.idea
+.vscode
+
+# Markdown files
+*.md
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

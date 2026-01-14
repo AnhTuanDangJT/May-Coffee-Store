@@ -1,0 +1,264 @@
+{
+  "common": {
+    "cta": {
+      "viewMenu": "Xem menu",
+      "qrEnglish": "Xem menu English-first",
+      "login": "Đăng nhập",
+      "signup": "Tạo tài khoản",
+      "logout": "Đăng xuất"
+    }
+  },
+  "auth": {
+    "loading": "Đang tải trạng thái đăng nhập...",
+    "noPermission": "Bạn không có quyền truy cập khu vực này.",
+    "register": {
+      "title": "Tạo tài khoản",
+      "subtitle": "Lưu đơn hàng, gửi feedback và nhận thông báo sự kiện độc quyền.",
+      "nameLabel": "Họ tên",
+      "emailLabel": "Email",
+      "passwordLabel": "Mật khẩu",
+      "submit": "Đăng ký",
+      "haveAccount": "Đã có tài khoản? Đăng nhập",
+      "success": "Đăng ký thành công, hãy kiểm tra email để lấy mã xác nhận.",
+      "devCodeHint": "Dành cho dev: mã xác nhận là {code}."
+    },
+    "login": {
+      "title": "Chào mừng quay lại",
+      "subtitle": "Đăng nhập để gửi feedback và truy cập admin dashboard.",
+      "emailLabel": "Email",
+      "passwordLabel": "Mật khẩu",
+      "submit": "Đăng nhập",
+      "noAccount": "Chưa có tài khoản? Đăng ký",
+      "unverified": "Tài khoản chưa xác nhận email, vui lòng nhập mã."
+    },
+    "verify": {
+      "title": "Xác nhận email",
+      "subtitle": "Nhập mã 6 chữ số chúng tôi vừa gửi. Email là",
+      "codeLabel": "Mã xác nhận",
+      "submit": "Xác nhận",
+      "success": "Đã xác nhận! Bạn có thể tiếp tục đặt món và quản lý feedback.",
+      "resendCode": "Gửi lại mã",
+      "resending": "Đang gửi...",
+      "resendSuccess": "Mã xác nhận đã được gửi lại vào email của bạn"
+    },
+    "errors": {
+      "generic": "Đã xảy ra lỗi, vui lòng thử lại.",
+      "emailRequired": "Email là bắt buộc",
+      "networkError": "Không thể kết nối đến server. Vui lòng thử lại sau."
+    }
+  },
+  "nav": {
+    "home": "Trang chủ",
+    "menu": "Menu",
+    "events": "Sự kiện",
+    "feedback": "Feedback",
+    "admin": "Admin"
+  },
+  "hero": {
+    "badge": "May Coffee R&B",
+    "title": "Không gian cà phê mang hơi thở âm nhạc giữa lòng Sài Gòn",
+    "subtitle": "Chúng tôi pha chế những món uống tràn đầy cảm hứng, pairing cùng âm nhạc R&B mượt mà để bạn luôn cảm thấy chill và sáng tạo.",
+    "rotatingLines": [
+      "Không gian cà phê mang hơi thở âm nhạc giữa lòng Sài Gòn",
+      "Nơi cảm xúc lắng lại cùng từng tách cà phê",
+      "Một góc nhỏ để chậm lại giữa nhịp sống thành phố",
+      "Cà phê – âm thanh – và những khoảng lặng dễ chịu"
+    ],
+    "featureSummary": "May Coffee cung cấp QR menu song ngữ, thông báo sự kiện theo email và trang feedback realtime để bạn luôn nắm vibe của quán.",
+    "primaryCta": "Khám phá menu",
+    "secondaryCta": "QR menu English-first",
+    "ratingHighlight": "điểm trung bình từ khách quen",
+    "menuHighlight": "công thức thủ công",
+    "vibeHighlight": "vibe R&B chuẩn chỉnh",
+    "serviceHighlight": "luôn sẵn sàng tiếp đón"
+  },
+  "menu": {
+    "titleShort": "Signature May Coffee",
+    "descriptionShort": "Cảm hứng từ hạt cà phê Việt, trái cây nhiệt đới và những giai điệu R&B cổ điển.",
+    "sectionHighlight": "Menu curated",
+    "badgeBest": "Best Seller",
+    "badgeNew": "New",
+    "pageTitle": "Menu May Coffee",
+    "pageSubtitle": "Thức uống sảng khoái, nhẹ nhàng, hoàn hảo cho những phút giây chill tại May Coffee.",
+    "searchPlaceholder": "Tìm theo tên hoặc mood bạn muốn...",
+    "categoryAll": "Tất cả",
+    "emptyState": "Chưa có món nào phù hợp với tiêu chí tìm kiếm.",
+    "qrSection": {
+      "badge": "QR menu",
+      "title": "Scan QR để xem menu tiếng Anh trước",
+      "subtitle": "Khách quốc tế chỉ cần mở camera, chúng tôi auto chuyển sang English-first nhưng bạn vẫn đổi lại tiếng Việt bất kỳ lúc nào.",
+      "cta": "Mở QR menu",
+      "download": "Tải QR PNG",
+      "copyLink": "Copy link menu",
+      "copySuccess": "Đã copy link QR"
+    }
+  },
+  "experience": {
+    "badge": "R&B Experience",
+    "title": "Từng hơi thở đều được thiết kế",
+    "subtitle": "Âm thanh êm, ánh sáng ấm, mùi rang caramel nhẹ và dịch vụ chân thành.",
+    "craft": {
+      "title": "Pha chế thủ công",
+      "description": "Cold brew ủ 18 giờ, syrup nấu tại quán, topping làm mới mỗi ngày."
+    },
+    "music": {
+      "title": "Playlist R&B",
+      "description": "Chọn lọc bởi resident DJ, groovy vừa đủ để bạn làm việc hoặc chill."
+    },
+    "ambience": {
+      "title": "Không gian cảm xúc",
+      "description": "Phối tone nâu, đồng ánh tím than, ghế da êm và hương nến gỗ tuyết tùng."
+    }
+  },
+  "events": {
+    "badge": "May Happenings",
+    "title": "Event & thông báo mới",
+    "subtitle": "Từ workshop cold brew, nghe nhạc acoustic đến private tasting theo mùa.",
+    "highlights": [
+      "Nhận thông báo song ngữ ngay khi event mở vé hoặc đổi lịch",
+      "Email nhắc lịch có kèm QR, route đi và dress code nếu có",
+      "Admin quản lý danh sách khách theo ca, tránh trùng lặp đăng ký"
+    ],
+    "cta": "Đăng ký nhận thông báo",
+    "viewDetails": "Xem chi tiết",
+    "loading": "Đang tải sự kiện...",
+    "empty": "Hiện chưa có sự kiện sắp tới.",
+    "emptySubtitle": "Vui lòng quay lại sau để xem cập nhật!",
+    "eventLocation": "Sự kiện tại quán",
+    "nextEvent": {
+      "label": "Thông báo sắp tới",
+      "title": "Đang cập nhật lịch sự kiện",
+      "description": "May Coffee sẽ thông báo những dịp lễ, ưu đãi đặc biệt hoặc workshop mới ngay khi mở đăng ký.",
+      "schedule": "Theo dõi fanpage hoặc đăng ký email để nhận thông báo đầu tiên."
+    }
+  },
+  "feedback": {
+    "badge": "Community",
+    "title": "Feedback về quán",
+    "subtitle": "",
+    "ctaDescription": "Bạn muốn góp giọng trong không gian R&B này? Đăng nhập và gửi feedback, admin duyệt xong sẽ hiện tại đây.",
+    "ctaButton": "Gửi feedback"
+  },
+  "feedbackPage": {
+    "title": "Góc feedback đậm chất R&B",
+    "subtitle": "Admin sẽ duyệt từng bình luận để giữ năng lượng tích cực.",
+    "ratingTitle": "Điểm trung bình",
+    "ratingSubtitle": "Tính theo feedback được phép hiển thị.",
+    "form": {
+      "title": "Chia sẻ cảm nhận của bạn",
+      "description": "Trình bày tâm tư của bạn với quán nhé!",
+      "ratingLabel": "Đánh giá của bạn",
+      "commentLabel": "Tâm sự mỏng",
+      "placeholder": "Ví dụ: Cold brew Cascara Sunset kết hợp playlist quá chill...",
+      "submit": "Gửi feedback",
+      "submitButton": "Gửi gắm yêu thương ☕",
+      "loginRequired": "Bạn cần đăng nhập để gửi feedback.",
+      "loginRequiredError": "Vui lòng đăng nhập để gửi feedback.",
+      "success": "Đã nhận feedback. Admin sẽ duyệt sớm nhất!",
+      "successTitle": "Cảm ơn bạn!",
+      "successMessage": "Phản hồi của bạn đã được gửi đi thành công. ✨",
+      "limit": "Bạn đã gửi đủ 3 feedback hôm nay.",
+      "networkError": "Không thể kết nối đến server. Vui lòng thử lại sau."
+    },
+    "list": {
+      "title": "Feedback",
+      "empty": "Chưa có feedback nào được duyệt.",
+      "note": ""
+    }
+  },
+  "admin": {
+    "nav": {
+      "overview": "Tổng quan",
+      "feedback": "Feedback",
+      "users": "Người dùng",
+      "events": "Sự kiện"
+    },
+    "overview": {
+      "title": "Radar trạng thái May Coffee",
+      "pendingTitle": "Feedback chờ duyệt",
+      "empty": "Không có feedback nào cần duyệt.",
+      "cta": "Xem tất cả"
+    },
+    "feedback": {
+      "title": "Quản lý feedback",
+      "pending": "Đang chờ",
+      "approved": "Đã duyệt",
+      "approve": "Duyệt",
+      "hide": "Ẩn",
+      "delete": "Xóa",
+      "deleteConfirm": "Bạn có chắc chắn muốn xóa feedback đã duyệt này? Hành động này không thể hoàn tác.",
+      "deleteError": "Xóa feedback thất bại. Vui lòng thử lại.",
+      "status": "Trạng thái"
+    },
+    "users": {
+      "title": "Danh sách người dùng",
+      "addAdminTitle": "Nâng quyền admin",
+      "addAdminPlaceholder": "Email user cần nâng quyền",
+      "addAdminButton": "Thêm admin",
+      "historyButton": "Lịch sử feedback",
+      "deleteButton": "Xóa user",
+      "promoteButton": "Nâng quyền admin",
+      "grantAdminButton": "Cấp quyền Admin",
+      "revokeAdminButton": "Thu hồi quyền Admin",
+      "revokeConfirm": "Bạn có chắc muốn thu hồi quyền admin của user này?",
+      "roleAdmin": "Admin",
+      "roleUser": "User",
+      "verified": "Đã xác nhận",
+      "notVerified": "Chưa xác nhận",
+      "historyEmpty": "User này chưa có feedback.",
+      "reasonPrompt": "Nhập lý do xóa user",
+      "reasonPlaceholder": "Ví dụ: Spam feedback không phù hợp"
+    },
+    "events": {
+      "title": "Quản lý sự kiện",
+      "createEvent": "Tạo sự kiện",
+      "editEvent": "Chỉnh sửa sự kiện",
+      "titlePlaceholder": "Tiêu đề sự kiện",
+      "descriptionPlaceholder": "Mô tả sự kiện",
+      "locationPlaceholder": "Địa điểm (tùy chọn)",
+      "publishLabel": "Xuất bản ngay",
+      "createButton": "Tạo sự kiện",
+      "updateButton": "Cập nhật",
+      "cancelButton": "Hủy",
+      "editButton": "Chỉnh sửa",
+      "publishButton": "Xuất bản",
+      "unpublishButton": "Gỡ xuất bản",
+      "deleteButton": "Xóa",
+      "deleteConfirm": "Bạn có chắc muốn xóa sự kiện này?",
+      "published": "Đã xuất bản",
+      "draft": "Bản nháp"
+    },
+    "messages": {
+      "success": "Thành công",
+      "error": "Có lỗi xảy ra, thử lại sau."
+    }
+  },
+  "footer": {
+    "openHours": "Mở cửa mỗi ngày 6:30 - 22:30",
+    "contact": "Liên hệ",
+    "social": "Kết nối",
+    "credit": "© 2026 May Coffee. Crafted with love & R&B vibe."
+  },
+  "qrPage": {
+    "badge": "English-first QR",
+    "title": "Scan & chill",
+    "subtitle": "Mở camera, quét QR và trải nghiệm menu tiếng Anh ngay lập tức. Bạn vẫn có thể đổi sang tiếng Việt mà không lệch layout.",
+    "steps": [
+      "Scan QR để mở maycoffee.store/menu/qr",
+      "Chọn ngôn ngữ mong muốn",
+      "Lưu QR để share cho bạn bè"
+    ],
+    "note": "Scan QR để xem menu tiếng Việt và tiếng Anh.",
+    "primaryCta": "Mở menu tiếng Anh",
+    "secondaryCta": "Xem tiếng Việt",
+    "download": "Tải QR",
+    "copyLink": "Copy link",
+    "copySuccess": "Đã copy link",
+    "loadingLabel": "Đang tải QR...",
+    "errorTitle": "QR đang lỗi",
+    "errorDescription": "QR đang lỗi tạm thời, bấm tải lại để tạo mã mới.",
+    "retryCta": "Tải lại",
+    "downloadError": "Không tải được QR, vui lòng thử lại."
+  }
+}
+
