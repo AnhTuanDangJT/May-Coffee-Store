@@ -37,15 +37,32 @@ const remotePatterns = remotePatternCandidates
     [],
   );
 
+const imageRemotePatterns: Array<{
+  protocol: string;
+  hostname: string;
+  port?: string;
+  pathname: string;
+}> = remotePatterns.map((pattern) => {
+  const result: {
+    protocol: string;
+    hostname: string;
+    port?: string;
+    pathname: string;
+  } = {
+    protocol: pattern.protocol,
+    hostname: pattern.hostname,
+    pathname: "/qr/**",
+  };
+  if (pattern.port) {
+    result.port = pattern.port;
+  }
+  return result;
+});
+
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   images: {
-    remotePatterns: remotePatterns.length
-      ? remotePatterns.map((pattern) => ({
-          ...pattern,
-          pathname: "/qr/**",
-        }))
-      : undefined,
+    remotePatterns: imageRemotePatterns.length > 0 ? (imageRemotePatterns as unknown as NonNullable<NextConfig["images"]>["remotePatterns"]) : undefined,
   },
 };
 
