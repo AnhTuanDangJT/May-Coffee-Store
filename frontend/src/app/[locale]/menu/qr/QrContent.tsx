@@ -57,7 +57,7 @@ export const QrContent = ({
 
   const QR_MENU_URL =
     process.env.NEXT_PUBLIC_QR_MENU_URL ??
-    (typeof window !== "undefined" ? `${window.location.origin}/menu/qr` : "");
+    (typeof window !== "undefined" ? `${window.location.origin}/menu` : "");
   
   const qrPageUrl = QR_MENU_URL;
   const qrImageUrl = `${BACKEND_BASE_URL}/qr/menu`;
