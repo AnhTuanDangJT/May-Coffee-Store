@@ -19,30 +19,33 @@ app.set("trust proxy", 1);
 
 const allowedOrigins = [
   "http://localhost:3000",
-  process.env.FRONTEND_URL
+  process.env.FRONTEND_URL,
 ].filter(Boolean);
 
-const corsOptions = {
-  origin: (origin: string | undefined, callback: (err: Error | null, allow?: boolean) => void) => {
-    // Allow server-to-server or same-origin requests
-    if (!origin) return callback(null, true);
+const corsOptions: cors.CorsOptions = {
+  origin: (origin, callback) => {
+    // Allow requests with no origin (health checks, server-to-server, preflight)
+    if (!origin) {
+      return callback(null, true);
+    }
 
-    // Allow localhost
+    // Allow explicit allowed origins
     if (allowedOrigins.includes(origin)) {
       return callback(null, true);
     }
 
-    // Allow Vercel preview & production domains
+    // Allow all Vercel deployments (preview + production)
     if (origin.endsWith(".vercel.app")) {
       return callback(null, true);
     }
 
     return callback(new Error("Not allowed by CORS"));
   },
-  credentials: true
+  credentials: true,
 };
 
 app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
 
 app.use(helmet());
 app.use(express.json({ limit: "1mb" }));
