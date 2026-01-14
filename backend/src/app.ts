@@ -19,6 +19,9 @@ app.set("trust proxy", 1);
 
 const allowedOrigins = [
   "http://localhost:3000",
+  "https://maycoffee.vercel.app",
+  "https://maycoffee.store",
+  "https://www.maycoffee.store",
   process.env.FRONTEND_URL,
 ].filter(Boolean);
 

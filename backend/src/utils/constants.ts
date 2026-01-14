@@ -9,6 +9,8 @@ export const COOKIE_BASE_OPTIONS = {
   sameSite: (process.env.NODE_ENV === "production" ? "none" : "lax") as "none" | "lax",
   // secure: true is REQUIRED when sameSite: "none"
   secure: process.env.NODE_ENV === "production",
+  // Set domain for production to allow cookies across maycoffee.store subdomains
+  ...(process.env.NODE_ENV === "production" && { domain: ".maycoffee.store" }),
   path: "/",
 };
 
