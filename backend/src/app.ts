@@ -45,7 +45,6 @@ const corsOptions: cors.CorsOptions = {
 };
 
 app.use(cors(corsOptions));
-app.options("*", cors(corsOptions));
 
 app.use(helmet());
 app.use(express.json({ limit: "1mb" }));
