@@ -15,92 +15,34 @@ import { AppError } from "./utils/appError";
 
 const app = express();
 
-// Build allowed origins list
-const allowedOrigins: string[] = [];
-
-// In development, allow localhost and local network IPs
-if (env.nodeEnv === "development") {
-  allowedOrigins.push("http://localhost:3000");
-  allowedOrigins.push("http://127.0.0.1:3000");
-  // Allow local network IPs (192.168.x.x, 10.x.x.x, 172.16-31.x.x)
-  // This enables access from other devices on the same network
-  // Note: For production, ensure proper CORS configuration
-} else {
-  // In production, use the configured frontend URL
-  allowedOrigins.push(env.frontendUrl);
-}
-
-// Helper function to check if origin is a local network address (development only)
-const isLocalNetworkOrigin = (origin: string): boolean => {
-  if (env.nodeEnv !== "development") return false;
-  try {
-    const url = new URL(origin);
-    const hostname = url.hostname;
-    const port = url.port || "3000";
-    
-    // Allow localhost variants
-    if (hostname === "localhost" || hostname === "127.0.0.1") {
-      return port === "3000";
-    }
-    
-    // Allow private IP ranges
-    // 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12
-    if (hostname.startsWith("192.168.") || hostname.startsWith("10.")) {
-      return port === "3000";
-    }
-    if (hostname.startsWith("172.")) {
-      const secondOctet = parseInt(hostname.split(".")[1] || "0");
-      if (secondOctet >= 16 && secondOctet <= 31) {
-        return port === "3000";
-      }
-    }
-    
-    return false;
-  } catch {
-    return false;
-  }
-};
-
 app.set("trust proxy", 1);
 
-app.use(
-  cors({
-    origin: (origin, callback) => {
-      // Allow requests with no origin (mobile apps, Postman, etc.)
-      if (!origin) return callback(null, true);
-      
-      // CRITICAL: When using credentials, Access-Control-Allow-Origin must EXACTLY match
-      // the request origin. We must return the origin string, not true.
-      // Returning true causes Express to set a wildcard or static value, which browsers
-      // reject when credentials are involved.
-      if (allowedOrigins.includes(origin)) {
-        // In development, log for debugging
-        if (env.nodeEnv === "development") {
-          console.log(`[CORS] origin=`, origin, `allowed=`, true);
-        }
-        // Return the actual origin string so Express sets Access-Control-Allow-Origin
-        // to the exact requesting origin (required for credentials)
-        return callback(null, origin);
-      }
-      
-      // In development, also check for local network IPs
-      if (env.nodeEnv === "development" && isLocalNetworkOrigin(origin)) {
-        console.log(`[CORS] origin=`, origin, `allowed=`, true, `(local network)`);
-        return callback(null, origin);
-      }
-      
-      // In development, log blocked origins for debugging
-      if (env.nodeEnv === "development") {
-        console.log(`[CORS] origin=`, origin, `allowed=`, false);
-        console.log(`[CORS] Blocked origin: ${origin}`);
-        console.log(`[CORS] Allowed origins:`, allowedOrigins);
-      }
-      
-      return callback(new Error("Not allowed by CORS"));
-    },
-    credentials: true, // CRITICAL: Must be true for cookies to work
-  }),
-);
+const allowedOrigins = [
+  "http://localhost:3000",
+  process.env.FRONTEND_URL
+].filter(Boolean);
+
+const corsOptions = {
+  origin: (origin: string | undefined, callback: (err: Error | null, allow?: boolean) => void) => {
+    // Allow server-to-server or same-origin requests
+    if (!origin) return callback(null, true);
+
+    // Allow localhost
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+
+    // Allow Vercel preview & production domains
+    if (origin.endsWith(".vercel.app")) {
+      return callback(null, true);
+    }
+
+    return callback(new Error("Not allowed by CORS"));
+  },
+  credentials: true
+};
+
+app.use(cors(corsOptions));
 
 app.use(helmet());
 app.use(express.json({ limit: "1mb" }));
