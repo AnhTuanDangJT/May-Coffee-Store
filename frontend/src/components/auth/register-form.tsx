@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
-import { useTranslations } from "next-intl";
+import React, { useState } from "react";
+import { useRouter as useNextRouter } from "next/navigation";
+import { useTranslations, useLocale } from "next-intl";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -10,7 +11,7 @@ import { Button } from "@/components/ui/button";
 import { FormMessage } from "@/components/forms/form-message";
 import { apiFetch } from "@/lib/api";
 import type { Locale } from "@/i18n/routing";
-import { Link, useRouter } from "@/i18n/navigation";
+import { Link } from "@/i18n/navigation";
 
 const schema = z.object({
   name: z.string().min(2),
@@ -24,10 +25,11 @@ type RegisterFormProps = {
   locale?: Locale;
 };
 
-export const RegisterForm = ({ locale }: RegisterFormProps) => {
+export const RegisterForm = ({ locale }: RegisterFormProps): React.JSX.Element => {
   const t = useTranslations("auth.register");
   const tErrors = useTranslations("auth.errors");
-  const router = useRouter();
+  const router = useNextRouter();
+  const currentLocale = useLocale();
   const [status, setStatus] = useState<{
     type: "success" | "error";
     message: string;
@@ -53,9 +55,8 @@ export const RegisterForm = ({ locale }: RegisterFormProps) => {
         : t("success");
       setStatus({ type: "success", message });
       setTimeout(() => {
-        // Use next-intl router which handles locale automatically
-        // Pass email as searchParams, not in the path
-        router.push(`/auth/verify?email=${encodeURIComponent(data.email)}`);
+        // Use next/navigation router with locale prefix for query params
+        router.push(`/${currentLocale}/auth/verify?email=${encodeURIComponent(data.email)}`);
       }, response?.devVerificationCode ? 1500 : 800);
     } catch (error) {
       setStatus({
