@@ -1,6 +1,6 @@
 "use client";
 
-import type { ComponentProps } from "react";
+import React, { type ComponentProps } from "react";
 import { useState, memo, useCallback, useMemo } from "react";
 import { Logo } from "./logo";
 
@@ -19,7 +19,7 @@ type HeaderProps = {
   introFinished?: boolean;
 };
 
-const HeaderComponent = ({ locale, introFinished = true }: HeaderProps) => {
+const HeaderComponent = ({ locale, introFinished = true }: HeaderProps): React.JSX.Element => {
   const t = useTranslations();
   const { user, logout } = useAuth();
   const router = useRouter();
@@ -36,7 +36,7 @@ const HeaderComponent = ({ locale, introFinished = true }: HeaderProps) => {
     setIsMobileMenuOpen(false);
   }, []);
 
-  const navItems = useMemo(() => [
+  const navItems = useMemo<Array<{ key: string; href: NavHref }>>(() => [
     { key: "nav.home", href: "/" },
     { key: "nav.menu", href: "/menu" },
     { key: "nav.events", href: "/events" },
