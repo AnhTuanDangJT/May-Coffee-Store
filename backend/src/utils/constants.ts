@@ -4,7 +4,10 @@ export const BOOTSTRAP_ADMIN_EMAIL = "dganhtuan.2k5@gmail.com";
 
 export const COOKIE_BASE_OPTIONS = {
   httpOnly: true,
-  sameSite: "lax" as const,
+  // Use "none" for cross-origin requests (Vercel frontend to Railway backend)
+  // "lax" only works for same-site requests
+  sameSite: (process.env.NODE_ENV === "production" ? "none" : "lax") as "none" | "lax",
+  // secure: true is REQUIRED when sameSite: "none"
   secure: process.env.NODE_ENV === "production",
   path: "/",
 };
