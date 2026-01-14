@@ -20,8 +20,10 @@ export async function apiFetch<T>(
   path: string,
   options: ApiOptions = {},
 ): Promise<T> {
-  // Ensure path starts with /api for backend routes
-  const normalizedPath = path.startsWith("/api") ? path : `/api${path}`;
+  // Normalize path: remove leading /api if present, then always prepend /api
+  // This ensures consistent URL construction: API_BASE_URL + /api + path
+  const cleanPath = path.startsWith("/api") ? path.slice(4) : path;
+  const normalizedPath = `/api${cleanPath}`;
   const url = `${API_BASE_URL}${normalizedPath}`;
   const headers: HeadersInit = {
     "Content-Type": "application/json",
