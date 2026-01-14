@@ -1,14 +1,17 @@
 "use client";
 
+import type { ComponentProps } from "react";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
+
+type NavHref = ComponentProps<typeof Link>["href"];
 
 export const AdminNav = () => {
   const t = useTranslations("admin.nav");
   const pathname = usePathname();
 
-  const navItems = [
+  const navItems: Array<{ key: string; href: NavHref }> = [
     { key: "overview", href: "/admin" },
     { key: "feedback", href: "/admin/feedback" },
     { key: "users", href: "/admin/users" },
