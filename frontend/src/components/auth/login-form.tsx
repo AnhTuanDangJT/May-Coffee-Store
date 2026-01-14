@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
-import { useSearchParams } from "next/navigation";
-import { useTranslations } from "next-intl";
+import React, { useState } from "react";
+import { useSearchParams, useRouter as useNextRouter } from "next/navigation";
+import { useTranslations, useLocale } from "next-intl";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -13,7 +13,7 @@ import { apiFetch, ApiError } from "@/lib/api";
 import type { User } from "@/types/user";
 import type { Locale } from "@/i18n/routing";
 import { useAuth } from "@/context/auth-context";
-import { Link, useRouter } from "@/i18n/navigation";
+import { Link } from "@/i18n/navigation";
 
 const schema = z.object({
   email: z.string().email(),
@@ -26,10 +26,11 @@ type LoginFormProps = {
   locale?: Locale;
 };
 
-export const LoginForm = ({ locale }: LoginFormProps) => {
+export const LoginForm = ({ locale }: LoginFormProps): React.JSX.Element => {
   const t = useTranslations("auth.login");
   const tErrors = useTranslations("auth.errors");
-  const router = useRouter();
+  const router = useNextRouter();
+  const currentLocale = useLocale();
   const searchParams = useSearchParams();
   const { setUser } = useAuth();
   const [status, setStatus] = useState<{
@@ -55,13 +56,13 @@ export const LoginForm = ({ locale }: LoginFormProps) => {
       setUser(response.data);
       if (!response.data.isEmailVerified) {
         setStatus({ type: "error", message: t("unverified") });
-        // Use next-intl router which handles locale automatically
-        router.push(`/auth/verify?email=${encodeURIComponent(data.email)}`);
+        // Use next/navigation router with locale prefix for query params
+        router.push(`/${currentLocale}/auth/verify?email=${encodeURIComponent(data.email)}`);
         return;
       }
-      // Use next-intl router which handles locale automatically
-      const redirectTo = searchParams.get("next") ?? "/";
-      router.push(redirectTo);
+      // Use next/navigation router with locale prefix for query params
+      const nextPath = searchParams?.get("next") ?? "/";
+      router.push(`/${currentLocale}${nextPath}`);
     } catch (error) {
       if (error instanceof ApiError) {
         if (error.status === 0 || error.name === "NetworkError") {
